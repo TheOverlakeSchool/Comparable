@@ -1,4 +1,6 @@
-public class CalendarDate {
+import java.util.Comparator;
+
+public class CalendarDate implements Comparable<CalendarDate> {
 	// the year component
 	private int year;
 	// the month component
@@ -40,5 +42,18 @@ public class CalendarDate {
 		}
 		result += day;
 		return result;
+	}
+
+	@Override
+	public int compareTo(CalendarDate o) {
+//		if (year != o.year) {
+//			return year - o.year;
+//		}
+//		if (month != o.month) {
+//			return month - o.month;
+//		}
+//
+//		return day - o.day;
+		return toString().compareTo(o.toString());
 	}
 }

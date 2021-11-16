@@ -1,4 +1,4 @@
-public class Location {
+public class Location implements Comparable<Location>{
 	private String name;
 	private double latitude;
 	private double longitude;
@@ -37,8 +37,18 @@ public class Location {
 		return result;
 	}
 
-//	Location seattle = new Location("Seattle",47.65,-122.3);
+	@Override
+	public int compareTo(Location o) {
+		if (Math.abs(latitude) != Math.abs(o.latitude)) {
+			return Double.compare(Math.abs(latitude), Math.abs(o.latitude));
+		}
+
+		return Double.compare(Math.abs(longitude), Math.abs(o.longitude));
+	}
+
 //	Location sydney = new Location("Sydney", -34.1,151.1);
 //	Location singapore = new Location("Singapore", 1.35, 103.82);
+//	Location kirkland = new Location("Kirkland", 47.67, -122.2);
+//	Location redmond = new Location("Redmond",47.67,-122.12);
 
 }

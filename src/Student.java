@@ -1,5 +1,10 @@
 public class Student implements Comparable<Student>{
 	private String name;
+
+	public int getAge() {
+		return age;
+	}
+
 	private int age;
 	private double gpa;
 	private double excellenceQuotient;
