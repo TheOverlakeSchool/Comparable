@@ -20,6 +20,10 @@ public class Student implements Comparable<Student>{
 		return name.compareTo(o.name);
 	}
 
+	public static int compareByAge(Student s1, Student s2) {
+		return s1.getAge() - s2.getAge();
+	}
+
 	public String toString(){
 		return name + ": " + gpa;
 	}
